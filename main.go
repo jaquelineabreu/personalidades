@@ -11,8 +11,8 @@ import (
 
 func main() {
 	models.Personalidades = []models.Personalidade{
-		{Nome: "Nome1", Historia:"Historia 1"},
-		{Nome: "Nome2", Historia:"Historia 2"},
+		{Id: 1, Nome: "Nome1", Historia:"Historia 1"},
+		{Id: 2, Nome: "Nome2", Historia:"Historia 2"},
 	}
 
 	fmt.Println("Inciando o servidor Rest com GO")
