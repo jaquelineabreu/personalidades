@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"strconv"
 
 	"github.com/gorilla/mux"
 	"github.com/jaquelineabreu/personalidades/models"
@@ -23,8 +24,8 @@ func RetornaUmaPersonalidade(w http.ResponseWriter, r *http.Request){
 	id := vars["id"]
 
 	for _, personalidade := range models.Personalidades {
-		if personalidade == id {
-			json.NewEncoder(w).Encode()
+		if strconv.Itoa(personalidade.Id) == id {
+			json.NewEncoder(w).Encode(personalidade)
 		}
 	}
 }
