@@ -29,3 +29,10 @@ func RetornaUmaPersonalidade(w http.ResponseWriter, r *http.Request){
 	json.NewEncoder(w).Encode(personalidade)
 }
 
+func CriaUmaNovaPersonalidade(w http.ResponseWriter, r *http.Request){
+	var novaPersonalidade models.Personalidade
+	json.NewDecoder(r.Body).Decode(&novaPersonalidade)
+	database.DB.Create(&novaPersonalidade)
+	json.NewEncoder(w).Encode(novaPersonalidade)
+}
+
